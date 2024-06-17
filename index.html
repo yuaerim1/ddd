@@ -8,15 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <style>
 
-        .eva {width: 1920px;
-          height:2078px;
-          background: #ffffff;
-          transform: scale(8);
-          transform-origin: top left; /* 확장의 기준점을 대지의 좌상단으로 설정 */
-          z-index: 0}
+        .eva {transform: scale(0.8);
+          transform-origin: top left;}
 
-          .변덕 {transform: scale(4);
-          transform-origin: top left; /* 확장의 기준점을 대지의 좌상단으로 설정 */}
+          .변덕 {transform: scale(2);
+          transform-origin: top left; }
 
             .overlay {
               top: 0;
@@ -24,15 +20,15 @@
               width: 100%;
               height: 100%;
               background-color: white;
-              opacity: 0; /* 초기에는 투명도를 0으로 설정하여 숨김 */
-              transition: opacity 0.5s ease; /* 투명도 변경 시 애니메이션 효과 추가 */
-              z-index: 9999; /* 다른 요소 위에 보이도록 z-index 설정 */
+              opacity: 0;
+              transition: opacity 0.5s ease; 
+              z-index: 9999; 
             }
     </style>
 </head>
 <body>
   <div class="overlay" id="whiteOverlay"></div>
-  <div class="eva"></div>
+  <div class="eva">
     <div class="e23_4">
         <div class="e68_1060"></div>
         <div class="e68_1062"></div>
@@ -100,6 +96,7 @@
         <div class="e68_722"><span>Z</span></div>
         <div class="e68_1030"><span>Z</span></div>
     </div></div>
+      </div>
     <script>
     // 각 클래스 요소를 NodeList로 가져오기
     const elements = document.querySelectorAll('.e68_1060, .e68_1062, .e68_1064, .e68_1066, .e68_1068, .e68_1070, .e68_1072, .e68_1074, .e68_1076, .e23_408, .e68_1078, .e23_416, .e23_417, .e23_418, .e23_419, .e23_420, .e23_421, .e23_422, .e23_423, .e23_424, .e68_1080, .e23_492, .e23_493, .e68_1058, .e23_499, .e23_500, .e68_1082, .e68_1084, .e68_1086, .e68_1088, .e68_1090, .e68_1092, .e68_1094, .e72_3, .e72_5, .e72_7, .e72_9, .e72_11, .e72_13, .e72_15, .e72_17, .e72_19, .e72_21, .e68_842, .e68_819, .e68_776, .e68_759, .e68_750, .e68_739, .e68_722, .e68_1030');
@@ -107,7 +104,7 @@
     // 각 요소에 대해 left와 top 값을 5배로 조정
     const originalLeft = 690; // 기존 left 값
     const originalTop = 2000; // 기존 top 값
-    const factor = 8; // 배수
+    const factor = 5; // 배수
     elements.forEach(element => {
       // 기존 left, top 값을 읽어오기
       const oldLeft = parseInt(window.getComputedStyle(element).left);
